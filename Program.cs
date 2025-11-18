@@ -1,34 +1,86 @@
-var builder = WebApplication.CreateBuilder(args);
-var app = builder.Build();
+Random dice = new Random();
 
-app.Urls.Add("http://localhost:5000");
-
-app.MapGet("/", () => "Hello World!");
-
-app.MapGet("/{cityName}/weather", GetWeatherByCity);
-
-app.Run();
+int monsterAC = 18;
 
 
-Weather GetWeatherByCity(string cityName)
+Console.WriteLine("Roll your D20! NOWWWW!!!");
+Console.ReadLine();
+
+int d20Roll = dice.Next(1, 21);
+Console.WriteLine("You rolled a " + Convert.ToString(d20Roll));
+
+if (d20Roll >= monsterAC)
 {
-    app.Logger.LogInformation($"Weather requested for {cityName}.");
-    var weather = new Weather(cityName);
-    return weather;
+    Console.WriteLine("You hit the monster!");
+} else {
+    Console.WriteLine("Your attack missed");
 }
 
-public record Weather
-{
-    public string City { get; set; }
 
-    public Weather(string city)
-    {
-        City = city;
-        Conditions = "Cloudy";
-        // Temperature here is in celsius degrees, hence the 0-40 range.
-        Temperature = new Random().Next(0,40).ToString();
-    }
 
-    public string Conditions { get; set; }
-    public string Temperature { get; set; }
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+ling gon gooli gooli gooli watcha li gon gooli gon go ling gon gooli gooli gooli watcha li gon gooli gon go
+*/
